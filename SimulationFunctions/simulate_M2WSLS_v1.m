@@ -11,6 +11,7 @@ for t = 1:T
         
         % first trial choose randomly
         p = [0.5 0.5];
+        % 包含了两个选择分别的概率，存储在一个行向量中
         
     else
         
@@ -18,7 +19,8 @@ for t = 1:T
         if rLast == 1
             
             % win stay (with probability 1-epsilon)
-            p = epsilon/2*[1 1];
+            p = epsilon/2*[1 1]; 
+            % 先初始化选另一个选项的概率，再改选上次一样的选择的概率
             p(aLast) = 1-epsilon/2;
             
         else
